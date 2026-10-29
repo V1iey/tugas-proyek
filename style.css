@@ -1,0 +1,81 @@
+:root{
+  --primary:#1f3a8a; --primary-dark:#172c6b;
+  --bg:#f3f5f9; --text:#222; --muted:#667;
+  --border:#d8dde8; --radius:8px;
+  --shadow:0 1px 3px rgba(0,0,0,.12);
+}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);line-height:1.5;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--primary)}
+
+/* ===== Navbar ===== */
+nav{position:sticky;top:0;z-index:10;background:var(--primary);padding:10px 16px;
+  display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+nav b{color:#fff;font-size:18px;margin-right:10px}
+nav a{color:#dbe4ff;text-decoration:none;font-size:14px;padding:4px 0}
+nav a:hover{color:#fff;text-decoration:underline}
+nav .out{margin-left:auto}
+
+/* ===== Layout ===== */
+main{max-width:1100px;margin:20px auto;padding:0 14px}
+main h2{margin:0 0 16px;font-size:22px}
+h3{margin:0 0 8px}
+small{color:var(--muted)}
+.bar{margin-bottom:12px}
+.card,form.card{background:#fff;padding:16px;border-radius:var(--radius);
+  box-shadow:var(--shadow);margin-bottom:16px}
+
+/* ===== Tabel ===== */
+.tbl{overflow-x:auto;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:14px}
+th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:middle}
+th{background:#e6ecfa;white-space:nowrap}
+tr:nth-child(even) td{background:#fafbfe}
+tr:hover td{background:#eef2fc}
+td:last-child{white-space:nowrap}
+
+/* ===== Form ===== */
+label{display:block;margin:10px 0 4px;font-size:13px;font-weight:600}
+input,select,textarea{width:100%;padding:8px 10px;border:1px solid #bbc;border-radius:5px;
+  font:inherit;font-size:14px;background:#fff;color:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid rgba(31,58,138,.25);border-color:var(--primary)}
+input:disabled{background:#eef0f5;color:var(--muted)}
+input[type=checkbox],input[type=radio]{width:auto}
+form.inline{display:inline;margin:0}
+
+/* ===== Tombol ===== */
+.btn{display:inline-block;background:var(--primary);color:#fff;border:0;padding:8px 12px;
+  border-radius:5px;text-decoration:none;font:inherit;font-size:13px;line-height:1.2;
+  cursor:pointer;vertical-align:middle}
+.btn:hover{background:var(--primary-dark)}
+.btn.red{background:#c62828}.btn.red:hover{background:#9f1f1f}
+.btn.gray{background:#667}.btn.gray:hover{background:#4f5568}
+.btn.green{background:#2e7d32}.btn.green:hover{background:#1f5e23}
+
+/* ===== Alert ===== */
+.alert{padding:10px 12px;border-radius:5px;margin-bottom:12px;border-left:4px solid}
+.alert.ok{background:#d9f5df;border-color:#2e7d32;color:#1b4d20}
+.alert.err{background:#fde0e0;border-color:#c62828;color:#7a1414}
+
+/* ===== Dashboard ===== */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:16px}
+.stat{background:#fff;padding:16px;border-radius:var(--radius);box-shadow:var(--shadow);
+  text-align:center;color:var(--muted);font-size:14px}
+.stat b{font-size:28px;display:block;color:var(--primary)}
+
+/* ===== Login / Register ===== */
+.auth{max-width:420px;margin:50px auto;padding:0 14px}
+
+/* ===== Daftar checkbox siswa ===== */
+.chk{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:4px;
+  max-height:260px;overflow:auto;border:1px solid #bbc;padding:8px;border-radius:5px;background:#fff}
+.chk label{display:flex;align-items:center;gap:6px;font-weight:400;margin:0;cursor:pointer}
+.chk input{width:auto;margin:0}
+
+/* ===== HP ===== */
+@media (max-width:600px){
+  main{margin:12px auto}
+  nav .out{margin-left:0}
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
